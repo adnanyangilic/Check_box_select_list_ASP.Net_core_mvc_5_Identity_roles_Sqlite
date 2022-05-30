@@ -14,3 +14,6 @@
  12-Put sqlite db file in a folder and modify connection string accordingly. 
  13-Putting Sqlite db in folder is optional to easily arrange and upgrade folder read write permissions in remote plesk hosting. 
  14-Db browser for Sqlite is management studio for Sqlite. Download and install it to work with internal structures and tables in Sqlite.
+ 15-Add _TopMenuPartial.cshtml in Views->Shared folder.
+ 16-Multiselect plugin is implemented in PlayersController->Create.cshtml with chosen.jquery.min.js and chosen.css.
+
