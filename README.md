@@ -4,3 +4,12 @@
  2-Install Microsoft.AspNetCore.Session NuGet Package 
  3-In Startup.cs add services.AddSession();
  4-In Startup.cs add app.UseSession();
+ 6-Install nuget package Microsoft.EntityFrameworkCore.Sqlite
+ 7-Modify Startup.cs services with Usesqlite instruction. 
+ 8-Modify connection string in appsettings.json.
+ 9-Create model classes, add model classes DbSets in ApplicationDbContext. Create controllers, views. 
+ 10-SQLite app.db is created by Visual Studio by update-database migration command thanks to nuget package Microsoft.EntityFrameworkCore.Sqlite 
+ 11-If Visual Studio created app.db file but identity tables migration errored then keep app.db file but delete migrations folder and renew migrations by add-migration        and update-database commands. 
+ 12-Put sqlite db file in a folder and modify connection string accordingly. 
+ 13-Putting Sqlite db in folder is optional to easily arrange and upgrade folder read write permissions in remote plesk hosting. 
+ 14-Db browser for Sqlite is management studio for Sqlite. Download and install it to work with internal structures and tables in Sqlite.
