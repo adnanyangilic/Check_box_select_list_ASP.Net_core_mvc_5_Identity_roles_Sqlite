@@ -4,6 +4,7 @@
  2-Install Microsoft.AspNetCore.Session NuGet Package 
  3-In Startup.cs add services.AddSession();
  4-In Startup.cs add app.UseSession();
+ 5-In Startup.cs add services.AddHttpContextAccessor();
  6-Install nuget package Microsoft.EntityFrameworkCore.Sqlite
  7-Modify Startup.cs services with Usesqlite instruction. 
  8-Modify connection string in appsettings.json.
