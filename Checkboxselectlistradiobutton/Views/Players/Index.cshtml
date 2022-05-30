@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Checkboxselectlistradiobutton.Models.Player>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SelectedIdsstring)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Loggedinuser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Living)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectedIdsstring)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loggedinuser)
+            </td>
+            <td>
+                <img style="height:100px;" src="@Html.DisplayFor(modelItem => item.ImagePath)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.TeamName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age.AgeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Living)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PlayerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PlayerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlayerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

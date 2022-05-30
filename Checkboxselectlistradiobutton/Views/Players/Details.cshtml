@@ -1,0 +1,60 @@
+﻿@model Checkboxselectlistradiobutton.Models.Player
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlayerName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SelectedIdsstring)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SelectedIdsstring)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Loggedinuser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Loggedinuser)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team.TeamName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age.AgeName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Living)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Living)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PlayerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

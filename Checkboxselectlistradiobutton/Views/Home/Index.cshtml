@@ -1,0 +1,249 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<h1 style="color:red;">Language session value: @ViewBag.Langses</h1>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+<div class="row">
+    <p><button id="arabic">Arabic</button><button id="chinese">Chinese</button><button id="turkish">Turkish</button><button id="english">English</button><button id="russian">Russian</button><button id="german">German</button><button id="french">French</button><button id="spanish">Spanish</button></p>
+</div>
+<input type="hidden" id="languageSessionValue" data-value="@ViewBag.Langses">
+<ul>
+    <li><span class="ttr" att="1"></span></li>
+    <li><span class="ttr" att="2"></span></li>
+    <li><span class="ttr" att="3"></span></li>
+    <li><span class="ttr" att="4"></span></li>
+    <li><span class="ttr" att="5"></span></li>
+    <li><span class="ttr" att="6"></span></li>
+    <li><span class="ttr" att="7"></span></li>
+    <li><span class="ttr" att="8"></span></li>
+    <li><span class="ttr" att="9"></span></li>
+    <li><span class="ttr" att="10"></span></li>
+    <li><span class="ttr" att="11"></span></li>
+    <li><span class="ttr" att="12"></span></li>
+</ul>
+
+@section Scripts {
+    <script>
+        let getatt = 0;
+        var ttrvalues = document.getElementsByClassName('ttr');
+        for (var i = 0; i < ttrvalues.length; i++) {
+            getatt = parseInt(ttrvalues[i].getAttribute('att'));
+            var thisspan = document.getElementsByClassName('ttr')[i];
+            switch (getatt) {
+                case 1:
+                    GetLanguageText_JavaScript(thisspan, 'TEKLİF ALIN', 'GET OFFER', 'OBTENIR LOFFRE', 'ANGEBOT BEKOMMEN', 'ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ', 'OBTENER OFERTA', '获得要约', 'احصل على عرض');
+                    break;
+                case 2:
+                    GetLanguageText_JavaScript(thisspan, 'Şifremi Unuttum', 'I forgot my password', 'jai oublié mon mot de passe', 'Ich habe mein Passwort vergessen', 'я забыл мой пароль', 'Olvidé mi contraseña', '我忘记了我的密码', 'لقد نسيت كلمة المرور');
+                    break;
+                case 3:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 4:
+                    GetLanguageText_JavaScript(thisspan, 'Şifremi Unuttum', 'I forgot my password', 'jai oublié mon mot de passe', 'Ich habe mein Passwort vergessen', 'я забыл мой пароль', 'Olvidé mi contraseña', '我忘记了我的密码', 'لقد نسيت كلمة المرور');
+                    break;
+                case 5:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 6:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 7:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 8:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 9:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 10:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 11:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                case 12:
+                    GetLanguageText_JavaScript(thisspan, 'Hesabım', 'My account', 'Mon compte', 'Mein Konto', 'Мой счет', 'Mi cuenta', '我的账户', 'حسابي');
+                    break;
+                default:
+                    GetLanguageText_JavaScript(thisspan, 'TEKLİF ALIN', 'GET OFFER', 'OBTENIR LOFFRE', 'ANGEBOT BEKOMMEN', 'ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ', 'OBTENER OFERTA', '获得要约', 'احصل على عرض');
+            };
+        };
+        function GetLanguageText_JavaScript(thisHTMLObject, language_tr, language_en, language_fr,
+            language_de, language_ru, language_es, language_cn, language_ar) {
+            var sessdiv = document.getElementById("languageSessionValue");
+            var languageSessionValue = parseInt(sessdiv.getAttribute('data-value'));
+            //alert(languageSessionValue);
+            var returnvalue = '';
+            if (languageSessionValue === 1) {
+                returnvalue = language_tr
+            } else if (languageSessionValue === 2) {
+                returnvalue = language_en
+            } else if (languageSessionValue === 3) {
+                returnvalue = language_fr
+            } else if (languageSessionValue === 4) {
+                returnvalue = language_de
+            } else if (languageSessionValue === 5) {
+                returnvalue = language_ru
+            } else if (languageSessionValue === 6) {
+                returnvalue = language_es
+            } else if (languageSessionValue === 7) {
+                returnvalue = language_cn
+            } else if (languageSessionValue === 8) {
+                returnvalue = language_ar
+            }
+            thisHTMLObject.innerHTML = returnvalue;
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(function () {
+            var langsesstr = "";
+            $("#arabic").click(function () {
+                langsesstr = "ar";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr},
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#chinese").click(function() {
+                langsesstr = "ch";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#turkish").click(function() {
+                langsesstr = "tr";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#english").click(function() {
+                langsesstr = "en";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#spanish").click(function () {
+                langsesstr = "es";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#russian").click(function () {
+                langsesstr = "ru";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#german").click(function () {
+                langsesstr = "de";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+            $("#french").click(function () {
+                langsesstr = "fr";
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/Index",
+                    data: { "langsesstr": langsesstr },
+                    success: function (response) {
+                        location.reload(true);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+}
